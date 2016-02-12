@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title #{title}
+    style(type='text/css')
+      #wrapper
+        font: 14px Arial;
+        width: 300px
+        padding: 5px
+        border: 1px solid #ccc;
+        margin: 0 auto;
+
+      #content
+        margin: 10px 0;
+
+      .highlighted
+        background: #doff5e
+
+    body
+      #wrapper
+        h1 #{title}
+        #content
+          p Jade is awesome
+          p.highlighted here is some text.
+          button#alert Click me
+        footer
+          span Copyright &copy; 2013
+          a(href='/') Home
+        script
+          var greeting = 'Welcome to Jade'
+          document.querySelector('#alert').onclick = function()
+            alert(greeting)
+          

@@ -1,0 +1,66 @@
+// showing conditionals in jade
+
+- for (var i in heroes) {
+  div #{i}. #{heroes[i].name}
+- }
+
+- if (typeof(title) != 'undefined')
+  = title
+- else
+  = 'Title is missing'
+
+- if (typeof(title) != 'undefined')
+  = title
+- else
+  = 'title' is missing'
+
+if hero.role == 'captain'
+  .msg Aye Captain!
+else if hero.role == 'hacker', && hero.name != 'Napman'
+  .msg Who goes there?
+else
+  .msg Avast!
+
+for hero in heroes
+  div= hero.name
+
+for hero in heroes
+    if hero.role == 'hacker'
+      div Got the hacker!
+      - break
+    div= hero.role
+
+i = 0
+while i < 5
+  div= i
+  i++
+
+each hero in heroes
+  unless hero.role == 'captain'
+    div #{hero.name}, roport for duty!
+
+each hero in heroes
+  if hero.role != 'captain'
+    div #{hero.name}, report for duty!
+
+
+
+- heroes.forEach(function(hero, i) {
+  div= hero.name
+- })
+
+- heroes.forEach(function(hero, i) {
+  div= hero.name
+- })
+
+pre
+  n = 10
+  - while (n > 0)
+    = n + '\n'
+    - n--
+
+- function greet(name)
+  p Hi #{name}!
+
+- greet('Fred')
+- greet('Ned')
